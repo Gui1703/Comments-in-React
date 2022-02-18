@@ -1,26 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #3936c0;
-  text-decoration: none;
-  list-style: none;
-}
+import styled from "styled-components";
 
-.Container {
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
-}
+`;
 
-img {
-  width: 328px;
-  height: 176px;
-  font-family: "Roboto", sans-serif;
-}
-
-textarea {
+export const TextArea = styled.textarea`
   background: #ffffff;
   border-radius: 10px;
   width: 342px;
@@ -36,10 +23,10 @@ textarea {
   font-size: 15px;
   line-height: 18px;
   color: rgba(15, 45, 82, 0.65);
-}
+`;
 
-button {
-  background: #000000;
+export const Button = styled.button`
+  background: ${(props) => (props.isOn ? "#000000" : "#808080	")};
   border-radius: 10px;
   width: 342px;
   height: 64px;
@@ -50,18 +37,17 @@ button {
   font-weight: bold;
   font-size: 17px;
   line-height: 2px;
-  color: #ffffff;
-}
+  color: ${(props) => (props.isOn ? "#FFFFFF" : "#000000	")};
 
-button:hover {
-  opacity: 0.8;
-}
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+`;
 
-button:active {
-  opacity: 0.5;
-}
-
-li {
+export const Li = styled.li`
   display: flex;
   background: rgba(255, 255, 255, 0.14);
   width: 342px;
@@ -75,8 +61,8 @@ li {
   font-weight: 900;
   font-size: 19px;
   line-height: 2px;
-}
+`;
 
-ul {
+export const Ul = styled.ul`
   margin-top: 35px;
-}
+`;

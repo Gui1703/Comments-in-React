@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-
-import "./App.css";
 import People from "./assets/people.svg";
 
+import { Container, TextArea, Button, Li, Ul } from './styles.js'
 function App() {
   // ESTADO => VARIÁVEL, SÓ QUE, ESSA VARIÁVEL VAI PERMITIR QUE EU ATUALIZE OS ITENS NA TELA
 
@@ -27,21 +26,21 @@ function App() {
   });
 
   return (
-    <div className="Container">
+    <Container>
       <img src={People} alt="Imagem pessoas" />
-      <textarea
+      <TextArea
         id="TextArea"
         placeholder="Seu comentário aqui !"
         onChange={Digit}
-      ></textarea>
-      <button onClick={ButtonComment}>Comentar</button>
+      ></TextArea>
+      <Button isOn={comment} onClick={ButtonComment}>Comentar</Button>
 
-      <ul>
-        {allComment.map((comment) => (
-          <li key={comment}>{comment}</li>
+      <Ul>
+        {allComment.map((cmt, index) => (
+          <Li key={index}>{cmt}</Li>
         ))}
-      </ul>
-    </div>
+      </Ul>
+    </Container>
   );
 }
 
